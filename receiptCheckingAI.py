@@ -53,14 +53,14 @@ image_path = os.path.join(current_dir, "sample.jpg")
 image = cv2.imread(image_path)
 results = reader.readtext(image)
 
-# align based on y-axis
+# 1. align based on y-axis
 results.sort(key=lambda x: (x[0][0][1], x[0][0][0]))  # x[0][0][1] = top-left y pos. then top-left x pos. upper one first, if the same, left one first.s
 
 # 2. combine same row words into a single array
 line_threshold = 10  # assume as the same row if y-diff is less than 10px
 lines = []
 current_line = []
-
+last_y = -1*line_threshold
 for bbox, text, conf in results:
     # pts = np.array(bbox, np.int32) # debugging purpose
     # cv2.polylines(image, [pts], True, (0,255,0), 2) # debugging purpose
