@@ -1,5 +1,8 @@
 # ReceiptCheckingAI
-AI reads the receipt given, organizes the info and save them into an excel file.<\br>
+AI reads the receipt given, organizes the info and save them into an excel file.</br>
+
+# Problem Statement
+Recently, most of people uses cards to pay things. However, there are still cases that we use our cash, or moments we need to split our payments in a single receipt. I thought that it will be beneficial if there is an agentic ai that can organize our receipt into a digital format using our picture. So, we can get digital data of our payments just by simply taking a picture of our receipt.
 
 # Process
 <img width="1501" height="273" alt="process" src="https://github.com/user-attachments/assets/ad416276-420e-4ff7-896e-230178621c66" />
