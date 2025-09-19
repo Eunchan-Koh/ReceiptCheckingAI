@@ -25,3 +25,6 @@ In my code, it will automaticall fill in the cells and save it as the excel file
    - Some information in the receipt can be containing personal information.
      1. Can include a guide what to do when taking a picture of the receipt
      2. Add a function that can remove the line  if a specific word related to security is found.
+
+# Next Step
+I will try to put this code inside the backend of cloud service, such as AWS or Google cloud, so people can try using it easily by uploading their receipt image into the website. Purpose is to experience backend+frontend steps by myself by this project, and to use this system when I need to.
