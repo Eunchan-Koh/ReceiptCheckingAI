@@ -2,7 +2,7 @@
 AI reads the receipt given, organizes the info and save them into an excel file.</br>
 
 # How It Looks Like
-https://www.youtube.com/watch?v=-ixL8PClKUg
+![demo](https://www.youtube.com/watch?v=-ixL8PClKUg)
 or
 ![Watch the video](./receipt2xlsx.mp4)
 
