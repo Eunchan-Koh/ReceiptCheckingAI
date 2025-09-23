@@ -4,7 +4,7 @@ AI reads the receipt given, organizes the info and save them into an excel file.
 # How It Looks Like
 https://www.youtube.com/watch?v=-ixL8PClKUg
 or
-https://github.com/user-attachments/assets/73ebb5fc-2fd8-46e7-b38d-ea9d4935b389
+![demo](https://github.com/user-attachments/assets/73ebb5fc-2fd8-46e7-b38d-ea9d4935b389.mp4)
 
 # Problem Statement
 Recently, most of people uses cards to pay things. However, there are still cases that we use our cash, or moments we need to split our payments in a single receipt. I thought that it will be beneficial if there is an agentic ai that can organize our receipt into a digital format using our picture. So, we can get digital data of our payments just by simply taking a picture of our receipt.
