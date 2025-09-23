@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Test</title>
+</head>
+
+<body>
+    <h1>Receipt image2Excel</h1>
+    <input type="file" id="fileInput" accept="image/*" />
+    <button onclick="uploadFile()">upload</button>
+
+    <script>
+        function uploadFile() {
+            const input = document.getElementById("fileInput");
+            const file = input.files[0];
+            if (file) {
+                var fileName = file.name;
+                var parts = fileName.split(".");
+
+            }
+            const formData = new FormData();
+            formData.append("myfile", file);
+
+            fetch("http://127.0.0.1:5000/upload", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(res => res.blob())
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement("a");
+                    a.href = url
+                    a.download = parts[0] + ".xlsx";
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                })
+                .catch(err => console.error("error:", err));
+        }
+    </script>
+</body>
+
+</html>
