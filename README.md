@@ -3,7 +3,6 @@ AI reads the receipt given, organizes the info and save them into an excel file.
 
 # How It Looks Like
 https://www.youtube.com/watch?v=-ixL8PClKUg
-<video src="https://www.youtube.com/watch?v=-ixL8PClKUg"></video>
 or
 <video src="https://github.com/user-attachments/assets/73ebb5fc-2fd8-46e7-b38d-ea9d4935b389"></video>
 
