@@ -4,7 +4,7 @@ import numpy as np
 import os
 from langchain_openai import ChatOpenAI
 from langchain.agents import initialize_agent, AgentType
-from langchain.prompts import PromptTemplate
+from langchain.prompts import ChatPromptTemplate
 from langchain.tools import tool
 from langchain.tools import StructuredTool
 from pydantic import BaseModel, Field, field_validator
@@ -142,7 +142,7 @@ def mainFunction(byteImage: bytes):
         # save as the excel file.
         file_path = os.path.join(current_dir, "receipt.xlsx")
         wb.save(file_path)
-        return
+        return "success!"
 
 
 
@@ -150,12 +150,18 @@ def mainFunction(byteImage: bytes):
     ##        receipt class done          ##
     ########################################
 
-    model = ChatOpenAI(model='gpt-4.1-nano', temperature=0)
+
+    model_version="gpt-4.1-nano"
+    model = ChatOpenAI(
+        model=model_version, 
+        temperature=0
+    )
 
     tool = StructuredTool.from_function(
             name="organize_receipt",
             func=Items_on_List,
-            description="receipt organizing tool"
+            description="receipt organizing tool",
+            return_direct=True
         )
 
     # tool list for agent
@@ -170,7 +176,10 @@ def mainFunction(byteImage: bytes):
     )
     # llm_with_tool = model.bind_tools(tools)
 
-    prompt = PromptTemplate.from_template("Can you organize this receipt? {receipt}")
+    prompt = ChatPromptTemplate.from_messages([
+        ('system', 'you are an accounting speicalist.'),
+        ('human', "Can you organize this receipt? {receipt}")
+    ])
     Actual_promt = prompt.invoke({"receipt": temp_text})
     # print(Actual_promt)
 
