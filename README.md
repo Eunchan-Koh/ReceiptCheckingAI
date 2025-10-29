@@ -35,8 +35,9 @@ In my code, it will automaticall fill in the cells and save it as the excel file
      2. Add a function that can remove the line  if a specific word related to security is found.
 
 # Next Step
-I will try to put this code inside the backend of cloud service, such as AWS or Google cloud, so people can try using it easily by uploading their receipt image into the website. Purpose is to experience backend+frontend steps by myself by this project, and to use this system when I need to.
+I will try to put this code inside the backend of cloud service, such as AWS or Google cloud, so people can try using it easily by uploading their receipt image into the website. Purpose is to experience backend+frontend steps in cloud environment by myself by this project, and to use this system when I need to.
 
+# Updates
 Sept 24th, 2025</br>
 - Set return_direct=True for the tool, so the LLM does not have to be called again after using the tool. Since this functionality does not require AI response itself, made this change. Now the cost for AI usage is halved.
 - One problem: GPT has changed their 'functions' into 'tools'. Because of it, it seems like model_kwargs on langchain is causing TypeErrors, cannot remove the reasoning effort of other models. I will try other models once I can set reasoning budget to 0.
